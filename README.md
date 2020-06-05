@@ -1,11 +1,11 @@
 # Overlaying Plots in R
-1. Single Color Plots
+1. Single Color Plot
 <img src="./figure/single_color_pathway.png">
 
-2. Color Gradient
+2. Color Gradient Plot 
 <img src="./figure/color_graident_pathway.png">
 
-3. Two seperate graphs
+3. Two seperate graphs (optional)
 <img src="./figure/two_seperate_graphs_pathway.png">
 
 # Reference
