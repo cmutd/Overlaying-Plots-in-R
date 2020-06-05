@@ -1,5 +1,6 @@
 # Overlaying Plots in R
-
+1. Single Color Plots
+<img src="./figure/two_seperate_graphs_pathway.png">
 
 # Reference
 1. <a href="https://biostats.w.uib.no/secondary-y-axis/" target="_blank"> Secondary Y-axis </a>
