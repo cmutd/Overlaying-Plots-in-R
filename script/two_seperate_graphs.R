@@ -13,6 +13,8 @@ datafr <- datafr%>%
          `log10(PValue)`=-log10(datafr$P.value))
 
 ################################################## step2: draw the graph ##################################################
+
+# gene plot -------------------------------------------------------------
 gene_plot <- datafr%>% ggplot(aes(x = `Number of Genes`, y = Term)) +
   geom_col(fill = "dodgerblue4", width = 0.35) + 
   geom_text(
@@ -39,7 +41,7 @@ gene_plot <- datafr%>% ggplot(aes(x = `Number of Genes`, y = Term)) +
 
 
 
-
+# p.value plot -------------------------------------------------------------
 p_value_plot <- datafr%>% 
   #mutate(group=1)%>%
   ggplot(aes(x = `log10(PValue)`, y = Term))+ 
@@ -60,6 +62,7 @@ p_value_plot <- datafr%>%
          text = element_text(face = "bold", size = 14)
        )
 
+################################################## step3: joining plots ##################################################
 png("./figure/two_seperate_graphs_pathway.png",width = 16, height = 12, units = 'in', res = 300)
 final_plot <- grid.arrange(
   gene_plot, p_value_plot, nrow = 1, 
