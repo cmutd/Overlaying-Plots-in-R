@@ -4,6 +4,8 @@ library(tidyverse)
 rm(list=ls())
 options(stringsAsFactors = F)
 
+################################################## step1: clean data ##################################################
+
 datafr <- read.table("test_data.txt",sep='\t',header=T)
 names(datafr)[2] <- "Number of Genes"
 
@@ -11,6 +13,8 @@ names(datafr)[2] <- "Number of Genes"
 datafr <- datafr%>% 
   mutate(Term = as.factor(Term) %>% fct_reorder(`Number of Genes`),
          `log10(PValue)`=-log10(datafr$P.value))
+
+################################################## step2: draw the graph ##############################################
 
 png("./figure/color_graident_pathway.png",width = 16, height = 12, units = 'in', res = 300)
 datafr%>% 
